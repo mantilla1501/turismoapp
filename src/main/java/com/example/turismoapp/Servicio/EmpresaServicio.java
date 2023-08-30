@@ -10,11 +10,12 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.repository.query.FluentQuery;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Function;
-
+@Service
 public class EmpresaServicio {
     @Autowired
     EmpresaRepositorio empresaRepositorio ;
@@ -89,8 +90,8 @@ public class EmpresaServicio {
     public List<Empresa> buscarTodasLasEmpresar () throws  Exception
     {
         try {
-            List<Empresa>ListaEmpresa=this.empresaRepositorio.findById();
-            return ListaEmpresa;
+            List<Empresa>empresaList=this.empresaRepositorio.findById();
+            return empresaList;
         }
 
         catch (Exception error){

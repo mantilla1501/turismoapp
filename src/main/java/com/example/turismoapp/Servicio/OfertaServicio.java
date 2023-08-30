@@ -5,9 +5,12 @@ import com.example.turismoapp.Repositorio.OfertaRepositorio;
 import com.example.turismoapp.validaciones.OfertaValidacion;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.annotation.Id;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+
+@Service
 
 
 public class OfertaServicio {
@@ -72,8 +75,8 @@ public class OfertaServicio {
     public List<Oferta> buscarTodasLasOferta () throws  Exception
     {
         try {
-            List<Oferta>ofertaList=this.ofertaRepositorio.findById();
-            return ofertaList;
+            List<Oferta>OfertaList=this.ofertaRepositorio.findById();
+            return OfertaList;
         }
         catch (Exception error){
             throw new Exception(error.getMessage());
